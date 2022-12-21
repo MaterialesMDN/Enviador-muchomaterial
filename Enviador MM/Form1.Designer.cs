@@ -554,7 +554,7 @@
             // 
             // textbox_texto_3
             // 
-            this.textbox_texto_3.Location = new System.Drawing.Point(617, 248);
+            this.textbox_texto_3.Location = new System.Drawing.Point(707, 248);
             this.textbox_texto_3.MenuManager = this.ribbonControl1;
             this.textbox_texto_3.Name = "textbox_texto_3";
             this.textbox_texto_3.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
