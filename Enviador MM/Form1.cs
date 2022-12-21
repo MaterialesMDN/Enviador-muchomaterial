@@ -137,7 +137,7 @@ namespace Enviador_MM
             string smtp_correo = "";
             string smtp_pass = "";
             string pass = "";
-            string query_lista_ventas = "";
+           // string query_lista_ventas = "";
 
 
 
