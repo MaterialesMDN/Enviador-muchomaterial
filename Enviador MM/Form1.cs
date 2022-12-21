@@ -139,6 +139,8 @@ namespace Enviador_MM
             string pass = "";
             string query_lista_ventas = "";
 
+
+
             XDocument db_xml = XDocument.Load(@"data.xml");
             var conexion = from con in db_xml.Descendants("Conection_Data") select con;
 
@@ -149,19 +151,14 @@ namespace Enviador_MM
                 smtp_pass = datos.Element(@"em_pass").Value;
                
             }
-            //smtp.UseDefaultCredentials = false;
+           
             smtp.Host = smtp_host;
              smtp.Port = 465;
-            // smtp.Credentials = new System.Net.NetworkCredential("noreply.materialesdelnorte4@gmail.com", "lwzexehkmktbopqd");//Cuenta de correo
+            
              smtp.Credentials = new System.Net.NetworkCredential(smtp_correo, smtp_pass);
              smtp.EnableSsl = true;
 
-            /* smtp.UseDefaultCredentials = false;
-            smtp.Host = "email-smtp.us-west-2.amazonaws.com";
-            smtp.Port = 465;
-            //smtp.Credentials = new System.Net.NetworkCredential("noreply.materialesdelnorte4@gmail.com", "lwzexehkmktbopqd");//Cuenta de correo
-            smtp.Credentials = new System.Net.NetworkCredential("AKIASZZTBV6W4A3ED5G5", "BBHkVuNi7bRyCoIvq7WMSOJVx6mW9a5AGS1Aw1EH4yWG");
-            smtp.EnableSsl = true;*/
+          
             
             
 
