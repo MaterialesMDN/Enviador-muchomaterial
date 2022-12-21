@@ -146,6 +146,7 @@ namespace Enviador_MM
 
             foreach (XElement datos in conexion.Elements(@"email_table"))
             {
+
                 smtp_host = datos.Element(@"em_smtp_host").Value;
                 smtp_correo = datos.Element(@"em_correo").Value;
                 smtp_pass = datos.Element(@"em_pass").Value;
