@@ -30,12 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.Animation.PushTransition pushTransition2 = new DevExpress.Utils.Animation.PushTransition();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.toolbarFormControl1 = new DevExpress.XtraBars.ToolbarForm.ToolbarFormControl();
             this.barLargeButtonItem1 = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -59,7 +60,7 @@
             this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
             this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_enviar_todos = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
@@ -68,6 +69,10 @@
             this.barButtonItem18 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem19 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem20 = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
+            this.barWorkspaceMenuItem2 = new DevExpress.XtraBars.BarWorkspaceMenuItem();
+            this.barEditItem2 = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemImageComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -80,9 +85,10 @@
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.Newsletter = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
+            this.radialMenu1 = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
-            this.textbox_texto_3 = new DevExpress.XtraEditors.TextEdit();
+            this.lbl_inf = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label8 = new System.Windows.Forms.Label();
             this.control_opacidad = new DevExpress.XtraEditors.TrackBarControl();
             this.textbox_img_foot = new DevExpress.XtraEditors.TextEdit();
@@ -107,12 +113,14 @@
             this.GridVCompras = new System.Windows.Forms.DataGridView();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
-            this.radialMenu1 = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.workspaceManager1 = new DevExpress.Utils.WorkspaceManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageComboBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radialMenu1)).BeginInit();
             this.xtraTabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textbox_texto_3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.control_opacidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.control_opacidad.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textbox_img_foot.Properties)).BeginInit();
@@ -129,7 +137,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.GridVCompras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radialMenu1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonPage4
@@ -207,7 +214,7 @@
             this.barListItem1,
             this.barStaticItem2,
             this.barEditItem1,
-            this.barButtonItem12,
+            this.btn_enviar_todos,
             this.barButtonItem13,
             this.barButtonItem14,
             this.barButtonItem15,
@@ -215,9 +222,12 @@
             this.barButtonItem17,
             this.barButtonItem18,
             this.barButtonItem19,
-            this.barButtonItem20});
+            this.barButtonItem20,
+            this.barSubItem2,
+            this.barWorkspaceMenuItem2,
+            this.barEditItem2});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 260;
+            this.ribbonControl1.MaxItemId = 263;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -225,7 +235,8 @@
             this.Newsletter});
             this.ribbonControl1.QuickToolbarItemLinks.Add(this.barSubItem1);
             this.ribbonControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemButtonEdit1});
+            this.repositoryItemButtonEdit1,
+            this.repositoryItemImageComboBox1});
             this.ribbonControl1.ShowItemCaptionsInPageHeader = true;
             this.ribbonControl1.Size = new System.Drawing.Size(1888, 177);
             this.ribbonControl1.TransparentEditorsMode = DevExpress.Utils.DefaultBoolean.True;
@@ -352,12 +363,13 @@
             this.repositoryItemButtonEdit1.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             // 
-            // barButtonItem12
+            // btn_enviar_todos
             // 
-            this.barButtonItem12.Caption = "Enviar Todos";
-            this.barButtonItem12.Id = 251;
-            this.barButtonItem12.ImageOptions.SvgImage = global::Enviador_MM.Properties.Resources.actions_checkcircled1;
-            this.barButtonItem12.Name = "barButtonItem12";
+            this.btn_enviar_todos.Caption = "Enviar Todos";
+            this.btn_enviar_todos.Id = 251;
+            this.btn_enviar_todos.ImageOptions.SvgImage = global::Enviador_MM.Properties.Resources.actions_checkcircled;
+            this.btn_enviar_todos.Name = "btn_enviar_todos";
+            this.btn_enviar_todos.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem12_ItemClick);
             // 
             // barButtonItem13
             // 
@@ -372,6 +384,7 @@
             this.barButtonItem14.Id = 253;
             this.barButtonItem14.ImageOptions.SvgImage = global::Enviador_MM.Properties.Resources.newtablestyle;
             this.barButtonItem14.Name = "barButtonItem14";
+            this.barButtonItem14.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem14_ItemClick);
             // 
             // barButtonItem15
             // 
@@ -424,6 +437,33 @@
             this.barButtonItem20.Name = "barButtonItem20";
             this.barButtonItem20.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem20_ItemClick);
             // 
+            // barSubItem2
+            // 
+            this.barSubItem2.Caption = "barSubItem2\r\n";
+            this.barSubItem2.Id = 260;
+            this.barSubItem2.Name = "barSubItem2";
+            // 
+            // barWorkspaceMenuItem2
+            // 
+            this.barWorkspaceMenuItem2.Caption = "barWorkspaceMenuItem2";
+            this.barWorkspaceMenuItem2.Id = 261;
+            this.barWorkspaceMenuItem2.Name = "barWorkspaceMenuItem2";
+            this.barWorkspaceMenuItem2.WorkspaceManager = this.workspaceManager1;
+            // 
+            // barEditItem2
+            // 
+            this.barEditItem2.Caption = "barEditItem2";
+            this.barEditItem2.Edit = this.repositoryItemImageComboBox1;
+            this.barEditItem2.Id = 262;
+            this.barEditItem2.Name = "barEditItem2";
+            // 
+            // repositoryItemImageComboBox1
+            // 
+            this.repositoryItemImageComboBox1.AutoHeight = false;
+            this.repositoryItemImageComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemImageComboBox1.Name = "repositoryItemImageComboBox1";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -475,7 +515,7 @@
             // 
             // ribbonPageGroup6
             // 
-            this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem12);
+            this.ribbonPageGroup6.ItemLinks.Add(this.btn_enviar_todos);
             this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem13);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.Text = "Envio";
@@ -495,6 +535,7 @@
             // ribbonPageGroup9
             // 
             this.ribbonPageGroup9.ItemLinks.Add(this.barButtonItem20);
+            this.ribbonPageGroup9.ItemLinks.Add(this.barEditItem2);
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
             this.ribbonPageGroup9.Text = "ribbonPageGroup9";
             // 
@@ -514,17 +555,26 @@
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "ribbonPageGroup3";
             // 
-            // xtraTabPage2
+            // radialMenu1
             // 
-            this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(1886, 792);
-            this.xtraTabPage2.Text = "Cupones";
+            this.radialMenu1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(82)))), ((int)(((byte)(0)))));
+            this.radialMenu1.ButtonRadius = 8;
+            this.radialMenu1.ItemLinks.Add(this.barButtonItem16);
+            this.radialMenu1.ItemLinks.Add(this.barButtonItem17);
+            this.radialMenu1.ItemLinks.Add(this.barButtonItem18);
+            this.radialMenu1.ItemLinks.Add(this.barButtonItem19);
+            this.radialMenu1.ItemLinks.Add(this.barButtonItem6);
+            this.radialMenu1.Name = "radialMenu1";
+            this.radialMenu1.PaintStyle = DevExpress.XtraBars.Ribbon.PaintStyle.Classic;
+            this.radialMenu1.Ribbon = this.ribbonControl1;
+            this.radialMenu1.SubMenuHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             // 
             // xtraTabPage1
             // 
             this.xtraTabPage1.Appearance.Header.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xtraTabPage1.Appearance.Header.Options.UseFont = true;
-            this.xtraTabPage1.Controls.Add(this.textbox_texto_3);
+            this.xtraTabPage1.Controls.Add(this.lbl_inf);
+            this.xtraTabPage1.Controls.Add(this.progressBar1);
             this.xtraTabPage1.Controls.Add(this.label8);
             this.xtraTabPage1.Controls.Add(this.control_opacidad);
             this.xtraTabPage1.Controls.Add(this.textbox_img_foot);
@@ -552,23 +602,24 @@
             this.xtraTabPage1.Size = new System.Drawing.Size(1886, 792);
             this.xtraTabPage1.Text = "Retoma tu compra";
             // 
-            // textbox_texto_3
+            // lbl_inf
             // 
-            this.textbox_texto_3.Location = new System.Drawing.Point(707, 248);
-            this.textbox_texto_3.MenuManager = this.ribbonControl1;
-            this.textbox_texto_3.Name = "textbox_texto_3";
-            this.textbox_texto_3.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            this.textbox_texto_3.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.textbox_texto_3.Properties.Appearance.Options.UseBackColor = true;
-            this.textbox_texto_3.Properties.Appearance.Options.UseForeColor = true;
-            this.textbox_texto_3.Properties.AppearanceFocused.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.textbox_texto_3.Properties.AppearanceFocused.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.textbox_texto_3.Properties.AppearanceFocused.Options.UseBorderColor = true;
-            this.textbox_texto_3.Properties.AppearanceFocused.Options.UseForeColor = true;
-            this.textbox_texto_3.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
-            this.textbox_texto_3.Size = new System.Drawing.Size(218, 20);
-            this.textbox_texto_3.TabIndex = 27;
-            this.textbox_texto_3.Visible = false;
+            this.lbl_inf.AutoSize = true;
+            this.lbl_inf.Location = new System.Drawing.Point(839, 757);
+            this.lbl_inf.Name = "lbl_inf";
+            this.lbl_inf.Size = new System.Drawing.Size(35, 13);
+            this.lbl_inf.TabIndex = 29;
+            this.lbl_inf.Text = "label9";
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.progressBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.progressBar1.Location = new System.Drawing.Point(567, 782);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(676, 10);
+            this.progressBar1.TabIndex = 28;
+            this.progressBar1.Visible = false;
             // 
             // label8
             // 
@@ -862,18 +913,18 @@
             // 
             this.GridVCompras.AllowUserToAddRows = false;
             this.GridVCompras.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
-            this.GridVCompras.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.GridVCompras.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.GridVCompras.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
             this.GridVCompras.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridVCompras.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridVCompras.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.GridVCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridVCompras.Dock = System.Windows.Forms.DockStyle.Left;
             this.GridVCompras.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
@@ -881,17 +932,17 @@
             this.GridVCompras.Name = "GridVCompras";
             this.GridVCompras.ReadOnly = true;
             this.GridVCompras.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridVCompras.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            this.GridVCompras.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridVCompras.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            this.GridVCompras.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.GridVCompras.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridVCompras.Size = new System.Drawing.Size(567, 792);
             this.GridVCompras.TabIndex = 1;
@@ -909,11 +960,11 @@
             // 
             // xtraTabControl1
             // 
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
-            serializableAppearanceObject1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            serializableAppearanceObject1.Options.UseBackColor = true;
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            serializableAppearanceObject2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            serializableAppearanceObject2.Options.UseBackColor = true;
             this.xtraTabControl1.CustomHeaderButtons.AddRange(new DevExpress.XtraTab.Buttons.CustomHeaderButton[] {
-            new DevExpress.XtraTab.Buttons.CustomHeaderButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Ellipsis, "Retoma tu compra", -1, true, true, editorButtonImageOptions1, serializableAppearanceObject1, "", null, null)});
+            new DevExpress.XtraTab.Buttons.CustomHeaderButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Ellipsis, "Retoma tu compra", -1, true, true, editorButtonImageOptions2, serializableAppearanceObject2, "", null, null)});
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtraTabControl1.Location = new System.Drawing.Point(0, 177);
             this.xtraTabControl1.Name = "xtraTabControl1";
@@ -921,24 +972,22 @@
             this.xtraTabControl1.Size = new System.Drawing.Size(1888, 823);
             this.xtraTabControl1.TabIndex = 8;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
-            this.xtraTabPage1,
-            this.xtraTabPage2});
+            this.xtraTabPage1});
             this.xtraTabControl1.Tag = "";
             this.xtraTabControl1.Transition.AllowTransition = DevExpress.Utils.DefaultBoolean.True;
             // 
-            // radialMenu1
+            // backgroundWorker1
             // 
-            this.radialMenu1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(82)))), ((int)(((byte)(0)))));
-            this.radialMenu1.ButtonRadius = 8;
-            this.radialMenu1.ItemLinks.Add(this.barButtonItem16);
-            this.radialMenu1.ItemLinks.Add(this.barButtonItem17);
-            this.radialMenu1.ItemLinks.Add(this.barButtonItem18);
-            this.radialMenu1.ItemLinks.Add(this.barButtonItem19);
-            this.radialMenu1.ItemLinks.Add(this.barButtonItem6);
-            this.radialMenu1.Name = "radialMenu1";
-            this.radialMenu1.PaintStyle = DevExpress.XtraBars.Ribbon.PaintStyle.Classic;
-            this.radialMenu1.Ribbon = this.ribbonControl1;
-            this.radialMenu1.SubMenuHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.backgroundWorker1.WorkerReportsProgress = true;
+            this.backgroundWorker1.WorkerSupportsCancellation = true;
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
+            // workspaceManager1
+            // 
+            this.workspaceManager1.TargetControl = this;
+            this.workspaceManager1.TransitionType = pushTransition2;
             // 
             // Form1
             // 
@@ -959,9 +1008,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageComboBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radialMenu1)).EndInit();
             this.xtraTabPage1.ResumeLayout(false);
             this.xtraTabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textbox_texto_3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.control_opacidad.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.control_opacidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textbox_img_foot.Properties)).EndInit();
@@ -978,7 +1028,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.GridVCompras)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.radialMenu1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1012,7 +1061,24 @@
         private DevExpress.XtraBars.BarStaticItem barStaticItem1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.BarListItem barListItem1;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem2;
+        private DevExpress.XtraBars.BarEditItem barEditItem1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
+        private DevExpress.XtraBars.BarButtonItem btn_enviar_todos;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem13;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem14;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem15;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem16;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem17;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem18;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem19;
+        private DevExpress.XtraBars.Ribbon.RadialMenu radialMenu1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem20;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
         private System.Windows.Forms.Label label8;
         private DevExpress.XtraEditors.TrackBarControl control_opacidad;
@@ -1038,25 +1104,14 @@
         public System.Windows.Forms.DataGridView GridVCompras;
         private System.Windows.Forms.WebBrowser webBrowser1;
         private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
-        private DevExpress.XtraBars.BarStaticItem barStaticItem2;
-        private DevExpress.XtraBars.BarEditItem barEditItem1;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem12;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem13;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem14;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem15;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
-        private DevExpress.XtraEditors.TextEdit textbox_texto_3;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem16;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem17;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem18;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem19;
-        private DevExpress.XtraBars.Ribbon.RadialMenu radialMenu1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem20;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private DevExpress.XtraBars.BarSubItem barSubItem2;
+        private DevExpress.XtraBars.BarWorkspaceMenuItem barWorkspaceMenuItem2;
+        private DevExpress.XtraBars.BarEditItem barEditItem2;
+        private DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox repositoryItemImageComboBox1;
+        private System.Windows.Forms.Label lbl_inf;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private DevExpress.Utils.WorkspaceManager workspaceManager1;
     }
 }
 

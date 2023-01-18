@@ -11,6 +11,9 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using System.Net.Mail;
 using System.Text.RegularExpressions;
+using System.Threading;
+using System.Xml;
+
 namespace Enviador_MM
 {
     public partial class Form1 : DevExpress.XtraBars.Ribbon.RibbonForm
@@ -34,6 +37,75 @@ namespace Enviador_MM
 
         }
 
+        public string lista_suscriptores()
+        {
+            string name_server = "";
+            string user = "";
+            string db_name = "";
+            string pass = "";
+            string query_suscriptores = "";
+
+            XDocument db_xml = XDocument.Load(@"data.xml");
+            var conexion = from con in db_xml.Descendants("Conection_Data") select con;
+
+            
+
+            foreach (XElement datos in conexion.Elements(@"Conection_Table"))
+            {
+                name_server = datos.Element(@"co_name").Value;
+                user = datos.Element(@"co_user").Value;
+                db_name = datos.Element(@"co_db_name").Value;
+                pass = datos.Element(@"co_pass").Value;
+            }
+
+
+            foreach (XElement datos_querys in conexion.Elements(@"Query_Table"))
+            {
+                query_suscriptores = datos_querys.Element(@"query_suscriptores").Value;
+
+            }
+
+
+
+            MySqlConnection conexion_db = new MySqlConnection("Server=" + name_server + "; Database=" + db_name + "; Uid=" + user + "; Pwd=" + pass);
+
+            try
+            {
+                conexion_db.Open();
+
+
+                MySqlCommand command = new MySqlCommand(query_suscriptores, conexion_db);
+                MySqlDataReader query_sus = command.ExecuteReader();
+                var dt = new DataTable();
+                dt.Columns.Add("Suscriptores");
+
+                while (query_sus.Read())
+                {
+                    //Console.Write(Convert.ToString(query1[0]));
+                    DataRow row = dt.NewRow();
+                    row["Suscriptores"] = Convert.ToString(query_sus[0]);
+
+                    dt.Rows.Add(row);
+
+                    
+                   
+                  
+                }
+                GridVCompras.DataSource = dt;
+                GridVCompras.Columns[0].Width = 300;
+                query_sus.Close();
+
+            }
+            catch (Exception e)
+            {
+
+                MessageBox.Show(""+e);
+            }
+
+
+
+            return "";
+        }
         public string lista_ventas()
         {
             string name_server = "";
@@ -71,7 +143,7 @@ namespace Enviador_MM
             {
               conexion_db.Open();
 
-                MessageBox.Show(query_lista_ventas);
+               
                 MySqlCommand command = new MySqlCommand(query_lista_ventas, conexion_db);
                 MySqlDataReader query1 = command.ExecuteReader();
                 var dt = new DataTable();
@@ -153,7 +225,7 @@ namespace Enviador_MM
             }
            
             smtp.Host = smtp_host;
-             smtp.Port = 465;
+             smtp.Port = 587;
             
              smtp.Credentials = new System.Net.NetworkCredential(smtp_correo, smtp_pass);
              smtp.EnableSsl = true;
@@ -468,6 +540,9 @@ namespace Enviador_MM
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+
+         
+            
             try
             {
                // correo.To.Add(text_box_correo.Text);
@@ -505,13 +580,18 @@ namespace Enviador_MM
             {
                 if (ribbonControl1.SelectedPage.Name == "ribbonPage1")
                 {
-                
+                    label1.Text = "Nombre";
+                    GridVCompras.Width = 567;
+                    lista_ventas();
                     label2.Text = "Correo";
                     textbox_img_foot.Visible = true;
                 }
                 if (ribbonControl1.SelectedPage.Name== "ribbonPage2")
                 {
-                   
+                    label1.Text = "Nombre Cupón";
+                    GridVCompras.Width = 300;
+                    
+                    lista_suscriptores();
                     label2.Text = "Texto 3";
                     textbox_img_foot.Visible = false;
                 }
@@ -532,5 +612,196 @@ namespace Enviador_MM
         {
 
         }
+
+        private void barButtonItem14_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            lista_suscriptores();
+        }
+
+        private void barButtonItem12_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+             
+
+            
+
+
+            if (backgroundWorker1.IsBusy)
+            {
+                backgroundWorker1.CancelAsync();
+                btn_enviar_todos.ImageOptions.SvgImage = global::Enviador_MM.Properties.Resources.actions_checkcircled;
+                btn_enviar_todos.Caption = "Enviar todos";
+                lbl_inf.Text = "";
+                progressBar1.Visible = false;
+
+
+               
+            }
+            else
+            {
+                Lista_suscriptores_xml();
+                btn_enviar_todos.ImageOptions.Image = global::Enviador_MM.Properties.Resources.cancel_32x321;
+                btn_enviar_todos.Caption = "Cancelar";
+                lbl_inf.Text = "Enviando...";
+                progressBar1.Visible = true; 
+                backgroundWorker1.RunWorkerAsync();
+
+            }
+            
+
+            
+            
+
+
+           
+        }
+
+        
+        public string Lista_suscriptores_xml()
+        {
+            //StreamWriter xml_suscriptores = new StreamWriter(@"data_suscriptores.xml");
+            XmlDocument xml_suscriptores = new XmlDocument();   
+            XmlNode root = xml_suscriptores.CreateElement("correos");
+            xml_suscriptores.AppendChild(root);
+
+            
+
+            
+                
+            
+
+            string name_server = "";
+            string user = "";
+            string db_name = "";
+            string pass = "";
+            string query_suscriptores = "";
+            int x = 0;
+
+            XDocument db_xml = XDocument.Load(@"data.xml");
+            var conexion = from con in db_xml.Descendants("Conection_Data") select con;
+
+            
+
+            foreach (XElement datos in conexion.Elements(@"Conection_Table"))
+            {
+                name_server = datos.Element(@"co_name").Value;
+                user = datos.Element(@"co_user").Value;
+                db_name = datos.Element(@"co_db_name").Value;
+                pass = datos.Element(@"co_pass").Value;
+            }
+
+
+            foreach (XElement datos_querys in conexion.Elements(@"Query_Table"))
+            {
+                query_suscriptores = datos_querys.Element(@"query_suscriptores").Value;
+
+            }
+
+
+
+            MySqlConnection conexion_db = new MySqlConnection("Server=" + name_server + "; Database=" + db_name + "; Uid=" + user + "; Pwd=" + pass);
+
+            try
+            {
+                conexion_db.Open();
+
+
+                MySqlCommand command = new MySqlCommand(query_suscriptores, conexion_db);
+                MySqlDataReader query_sus = command.ExecuteReader();
+               
+                while (query_sus.Read())
+                {
+                    //Console.Write(Convert.ToString(query1[0]));
+                    XmlElement correo_sus = xml_suscriptores.CreateElement("correo_suscriptor");
+                    root.AppendChild(correo_sus);
+
+                    XmlElement element1 = xml_suscriptores.CreateElement(string.Empty, "correos", string.Empty);
+                    xml_suscriptores.AppendChild(element1);
+
+
+                    XmlElement id = xml_suscriptores.CreateElement(string.Empty, "Id", string.Empty);
+                    XmlText text_id = xml_suscriptores.CreateTextNode(Convert.ToString(x));
+                    x++;
+
+                    element1.AppendChild(id);
+
+
+                    XmlElement correo = xml_suscriptores.CreateElement(string.Empty, "correo", string.Empty);
+                    XmlText text_correo = xml_suscriptores.CreateTextNode(Convert.ToString( query_sus[0]));
+                    element1.AppendChild(correo);
+
+
+                    XmlElement enviado = xml_suscriptores.CreateElement(string.Empty, "enviado", string.Empty);
+                    XmlText text_enviado = xml_suscriptores.CreateTextNode("0");
+                    element1.AppendChild(enviado);
+
+                    correo.AppendChild(text_correo);
+                    enviado.AppendChild(text_enviado);
+                    
+                 
+                   
+                    
+
+
+
+
+
+
+
+
+
+                }
+                xml_suscriptores.Save("data_send.xml");
+                query_sus.Close();
+
+            }
+            catch (Exception e)
+            {
+
+                MessageBox.Show("" + e);
+            }
+            return "";
+           
+
+        }
+
+
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            string id = "";
+            XmlDocument doc = new XmlDocument();
+            doc.Load("data_send.xml");
+            int x = 0;
+            List<string> lista_correos = new List<string>();
+            foreach (XmlNode node in doc.DocumentElement.ChildNodes)
+            {
+                // 
+                
+                id = node.Attributes["correo"].Value;
+                lista_correos.Add(id);
+                lbl_inf.Text = id;
+                backgroundWorker1.ReportProgress(x++, id);
+              
+              
+            }
+          
+        }
+        
+        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            progressBar1.Value = e.ProgressPercentage;
+            lbl_inf.Text = e.ToString();
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            
+            progressBar1.Visible = false;
+            progressBar1.Value = 0;
+            lbl_inf.Text = "Completado";
+            Thread.Sleep(4000);
+            lbl_inf.Text = "";
+        }
     }
+
 }
